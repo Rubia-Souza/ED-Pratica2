@@ -5,7 +5,7 @@
             "label": "make_clean",
             "command": "make",
             "args": [
-                "windows_clean"
+                "clean"
             ],
             "group": "none"
         },
@@ -35,7 +35,7 @@
                 "-g",
                 "${workspaceFolder}/obj/*.o",
                 "-o",
-                "${workspaceFolder}/bin/run.exe"
+                "${workspaceFolder}/bin/vetop"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
