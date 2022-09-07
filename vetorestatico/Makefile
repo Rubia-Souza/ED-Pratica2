@@ -80,3 +80,7 @@ $(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.c
 	
 clean:
 	rm -f $(EXE) $(OBJS) gmon.out
+
+windows_clean:
+	del /S .\bin\*
+	del /S .\obj\*

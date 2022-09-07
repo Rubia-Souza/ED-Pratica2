@@ -56,3 +56,7 @@ $(OBJ)/pilhaindexada.o: $(HDRS) $(SRC)/pilhaindexada.c
 
 clean:
 	rm -f $(EXE) $(TEST) $(OBJS)  $(TOBJS)
+
+windows_clean:
+	del /S .\bin\*
+	del /S .\obj\*
