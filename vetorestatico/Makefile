@@ -41,28 +41,61 @@ mem: $(EXE)
 	$(ANALISAMEM) -i /tmp/normalog.out -p /tmp/normaest/normaest
 
 perf: $(EXE)
-	$(EXE) -d 1000000 -s -p /tmp/soma1M.out
-	$(EXE) -d 1000000 -i -p /tmp/interno1M.out
-	$(EXE) -d 1000000 -n -p /tmp/norma1M.out
-	$(EXE) -d 2000000 -s -p /tmp/soma2M.out
-	$(EXE) -d 2000000 -i -p /tmp/interno2M.out
-	$(EXE) -d 2000000 -n -p /tmp/norma2M.out
-	$(EXE) -d 3000000 -s -p /tmp/soma3M.out
-	$(EXE) -d 3000000 -i -p /tmp/interno3M.out
-	$(EXE) -d 3000000 -n -p /tmp/norma3M.out
-	$(EXE) -d 4000000 -s -p /tmp/soma4M.out
-	$(EXE) -d 4000000 -i -p /tmp/interno4M.out
-	$(EXE) -d 4000000 -n -p /tmp/norma4M.out
-	$(EXE) -d 5000000 -s -p /tmp/soma5M.out
-	$(EXE) -d 5000000 -i -p /tmp/interno5M.out
-	$(EXE) -d 5000000 -n -p /tmp/norma5M.out
+	$(EXE) -d 100 -s -p /tmp/soma1M.out
+	$(EXE) -d 100 -i -p /tmp/interno1M.out
+	$(EXE) -d 100 -n -p /tmp/norma1M.out
+	$(EXE) -d 200 -s -p /tmp/soma2M.out
+	$(EXE) -d 200 -i -p /tmp/interno2M.out
+	$(EXE) -d 200 -n -p /tmp/norma2M.out
+	$(EXE) -d 300 -s -p /tmp/soma3M.out
+	$(EXE) -d 300 -i -p /tmp/interno3M.out
+	$(EXE) -d 300 -n -p /tmp/norma3M.out
+	$(EXE) -d 400 -s -p /tmp/soma4M.out
+	$(EXE) -d 400 -i -p /tmp/interno4M.out
+	$(EXE) -d 400 -n -p /tmp/norma4M.out
+	$(EXE) -d 500 -s -p /tmp/soma5M.out
+	$(EXE) -d 500 -i -p /tmp/interno5M.out
+	$(EXE) -d 500 -n -p /tmp/norma5M.out
 
 gprof: $(BIN)/vetop
-	$(EXE) -d 5000000 -s -p /tmp/soma5Mgprof.out 
+# Teste 100
+	$(EXE) -d 100 -s -p /tmp/soma1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma1Mgprof.txt
+	$(EXE) -d 100 -i -p /tmp/interno1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno1Mgprof.txt
+	$(EXE) -d 100 -n -p /tmp/norma1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma1Mgprof.txt
+
+# Teste 200
+	$(EXE) -d 200 -s -p /tmp/soma2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma2Mgprof.txt
+	$(EXE) -d 200 -i -p /tmp/interno2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno2Mgprof.txt
+	$(EXE) -d 200 -n -p /tmp/norma2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma2Mgprof.txt
+
+# Teste 300
+	$(EXE) -d 300 -s -p /tmp/soma3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma3Mgprof.txt
+	$(EXE) -d 300 -i -p /tmp/interno3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno3Mgprof.txt
+	$(EXE) -d 300 -n -p /tmp/norma3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma3Mgprof.txt
+
+# Teste 400
+	$(EXE) -d 400 -s -p /tmp/soma4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma4Mgprof.txt
+	$(EXE) -d 400 -i -p /tmp/interno4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno4Mgprof.txt
+	$(EXE) -d 400 -n -p /tmp/norma4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma4Mgprof.txt
+
+# Teste 500
+	$(EXE) -d 500 -s -p /tmp/soma5Mgprof.out 
 	gprof $(EXE) gmon.out > /tmp/soma5Mgprof.txt
-	$(EXE) -d 5000000 -i -p /tmp/interno5Mgprof.out 
+	$(EXE) -d 500 -i -p /tmp/interno5Mgprof.out 
 	gprof $(EXE) gmon.out > /tmp/interno5Mgprof.txt
-	$(EXE) -d 5000000 -n -p /tmp/norma5Mgprof.out 
+	$(EXE) -d 500 -n -p /tmp/norma5Mgprof.out 
 	gprof $(EXE) gmon.out > /tmp/norma5Mgprof.txt
 	
 

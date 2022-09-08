@@ -58,6 +58,39 @@ perf: $(EXE)
 	$(EXE) -d 5000000 -n -p /tmp/norma5M.out
 
 gprof: $(BIN)/vetop
+# Teste 1 Milhoes
+	$(EXE) -d 1000000 -s -p /tmp/soma1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma1Mgprof.txt
+	$(EXE) -d 1000000 -i -p /tmp/interno1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno1Mgprof.txt
+	$(EXE) -d 1000000 -n -p /tmp/norma1Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma1Mgprof.txt
+
+# Teste 2 Milhoes
+	$(EXE) -d 2000000 -s -p /tmp/soma2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma2Mgprof.txt
+	$(EXE) -d 2000000 -i -p /tmp/interno2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno2Mgprof.txt
+	$(EXE) -d 2000000 -n -p /tmp/norma2Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma2Mgprof.txt
+
+# Teste 3 Milhoes
+	$(EXE) -d 3000000 -s -p /tmp/soma3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma3Mgprof.txt
+	$(EXE) -d 3000000 -i -p /tmp/interno3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno3Mgprof.txt
+	$(EXE) -d 3000000 -n -p /tmp/norma3Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma3Mgprof.txt
+
+# Teste 4 Milhoes
+	$(EXE) -d 4000000 -s -p /tmp/soma4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/soma4Mgprof.txt
+	$(EXE) -d 4000000 -i -p /tmp/interno4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/interno4Mgprof.txt
+	$(EXE) -d 4000000 -n -p /tmp/norma4Mgprof.out 
+	gprof $(EXE) gmon.out > /tmp/norma4Mgprof.txt
+
+# Teste 5 Milhoes
 	$(EXE) -d 5000000 -s -p /tmp/soma5Mgprof.out 
 	gprof $(EXE) gmon.out > /tmp/soma5Mgprof.txt
 	$(EXE) -d 5000000 -i -p /tmp/interno5Mgprof.out 
